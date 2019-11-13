@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 import { IEquipmentItem } from './../../interfaces/IEquipmentItem';
 
 @Component({
@@ -14,8 +14,8 @@ export class EquipItemComponent implements OnInit {
   @Input()
   id: number;
 
-  // @Output()
-  // selected: EventEmmiter<IEquipmentItem> = new EventEmitter();
+  @Output()
+  selected = new EventEmitter<IEquipmentItem>();
 
   constructor() { }
 
@@ -24,6 +24,6 @@ export class EquipItemComponent implements OnInit {
   }
   emitItem(event){
     console.log('moje id: ' + this.id);
-    // this.selected.emit(this.item);
+    this.selected.emit(this.item);
   }
 }

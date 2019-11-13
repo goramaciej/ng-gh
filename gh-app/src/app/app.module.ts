@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { EquipmentComponent } from './equipment/equipment.component';
 import { EquipItemComponent } from './equip-item/equip-item.component';
 import { TemporaryComponent } from './temporary/temporary.component';
+import { ItemsContainerComponent } from './items-container/items-container.component';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { TemporaryComponent } from './temporary/temporary.component';
     AppComponent,
     EquipmentComponent,
     EquipItemComponent,
-    TemporaryComponent
+    TemporaryComponent,
+    ItemsContainerComponent
   ],
   imports: [
     BrowserModule,

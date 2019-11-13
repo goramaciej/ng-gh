@@ -1,7 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { IEquipmentItem } from './../../interfaces/IEquipmentItem';
 
-import Def from '../../data/items.json';
+import Items from '../../data/items.json';
+import User from '../../data/user.json';
 
 @Component({
     selector: 'app-equipment',
@@ -9,16 +10,21 @@ import Def from '../../data/items.json';
     styleUrls: ['./equipment.component.scss']
 })
 export class EquipmentComponent implements OnInit {
-
+    //ng serve
     data1: IEquipmentItem;
-    dd: string;
+    user = User;
+    items = Items;
 
     constructor() {
 
     }
     ngOnInit() {
       console.log('Reading local json files:: ');
-      console.log(Def);
+
+
+
+      //console.log(JSON.parse(this.user));
+      //console.log(JSON.parse(User));
       this.data1 = new Item();
     }
     showData(){
