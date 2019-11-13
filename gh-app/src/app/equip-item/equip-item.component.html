@@ -1,3 +1,5 @@
-<div class="equip-item">
-    <p>item</p>
+<div class="equip-item" (click)="emitItem($event)">
+  <!-- <button (click)="showItem()">showItem</button> -->
+  <img [src]="item.thumbUrl" />
+  <!-- <p>{{ myString }}</p> -->
 </div>

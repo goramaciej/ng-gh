@@ -1,4 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+@import './scss/properties.scss';
+*{
+  font-family: Lato,Helvetica,Arial,sans-serif;
+}
+
 body {
-    background: #1c2326;
+    background: $gh-bcgcolor;
 }

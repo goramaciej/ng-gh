@@ -6,13 +6,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { EquipmentComponent } from './equipment/equipment.component';
 import { EquipItemComponent } from './equip-item/equip-item.component';
+import { TemporaryComponent } from './temporary/temporary.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     EquipmentComponent,
-    EquipItemComponent
+    EquipItemComponent,
+    TemporaryComponent
   ],
   imports: [
     BrowserModule,

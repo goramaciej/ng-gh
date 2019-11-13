@@ -1,52 +1,5 @@
-<p>equipment works!</p>
-<ul>
-    <li *ngFor="let day of days">
-        {{ day }}
-    </li>
-</ul>
-<p>A pieski, czy pieski będą działać?</p>
-<ul>
-    <li *ngFor="let kejter of dogs; let i = index">
-        {{ kejter.name }} :::: {{i}}
-    </li>
-</ul>
+<p>Equipment works</p>
+<app-equip-item [item]="data1" [id]="12" ></app-equip-item>
 
-<ng-container *ngIf = "days.length > 1">
-    <p>Jest więcej dni</p>
-</ng-container>
-
-<ng-container *ngIf = "show; then showVisible; else kaszanka"></ng-container>
-<ng-template #showVisible>
-    <p>show jest widoczny</p>
-</ng-template>
-
-<ng-template #kaszanka>
-    <p>Kaszanka</p>
-</ng-template>
-<app-equip-item></app-equip-item>
-<!-- <equip-item *ngFor="let day of days;"></equip-item> -->
-
-<!-- <div class="note" [ngClass]="{'transition':show}" *ngIf="show"> -->
-<!-- <div class="note" [ngClass]="{'transition':show}" [hidden]="!show"> -->
-<p> Notes</p>
-  <!-- </div> -->
-<button class="btn btn-default" (click)="show = !show">Toggle</button>
-
-<ng-container *ngFor="let dday of days">
-    <ng-container [ngSwitch]="dday">
-        <div *ngSwitchCase="'monday'">poniedziałek</div>
-        <div *ngSwitchCase="'tuesday'">wtorek</div>
-        <div *ngSwitchCase="'wednesday'">środa</div>
-        <div *ngSwitchDefault>inny dzień</div>
-    </ng-container>
-</ng-container>
-<div>
-    <input type="text" [(ngModel)]="bindedText">
-    <p> {{ bindedText }}</p>
-</div>
-<button (click)="clickMe($event)">kliknij</button>
-
-<h3 [className]="colorClass">One</h3>
-<img [src]="imageUrl" />
-<input [maxLength]="maxLength" [value]="fieldValue">
-<button (click)="addChest('mychest')">dodaj skrzynię</button>
+<button (click)="showData()">showData</button>
+<!-- <img src="../../assets/images/thumbs/chest1.jpg"> -->

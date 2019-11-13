@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { IEquipmentItem } from './../../interfaces/IEquipmentItem';
+
+import Def from '../../data/items.json';
 
 @Component({
     selector: 'app-equipment',
@@ -6,36 +9,42 @@ import { Component, OnInit } from '@angular/core';
     styleUrls: ['./equipment.component.scss']
 })
 export class EquipmentComponent implements OnInit {
-    title = 'equipment';
-    days = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'];
-    dogs = new Array<Dog>();
-    show = false;
-    bindedText:string = 'this is some text';
 
-    colorClass = 'green';
-    imageUrl = '';
-    maxLength = '6';
-    fieldValue = 'field one';
+    data1: IEquipmentItem;
+    dd: string;
 
     constructor() {
-        this.dogs.push(new Dog('rex', 4), new Dog('czaruś', 6), new Dog('pusia', 8));
+
+    }
+    ngOnInit() {
+      console.log('Reading local json files:: ');
+      console.log(Def);
+      this.data1 = new Item();
+    }
+    showData(){
+      console.log(this.data1.name);
+    }
+    itemSelected(event) {
+      console.log('itemSelected: ' + event);
     }
 
-    ngOnInit() {
-        console.log('equipment inited');
-        console.log(this.dogs);
-    }
-    clickMe(ev){
-        console.log("clicked: "+ev);
-    }
-    addChest(cos:string){
-      console.log('dodaj: '+cos);
-    }
 }
 
-class Dog {
-    constructor(public name: string, public age: number){
-        this.name = name;
-        this.age = age;
-    }
+class Item implements IEquipmentItem {
+  name: string;
+  id: number;
+  type: string;
+  imageUrl: string;
+  thumbUrl: string;
+  value: number;
+  key: string;
+  constructor(){
+    this.name = 'skrzynia1';
+    this.id = 1;
+    this.type = 'chest';
+    this.imageUrl = '../../assets/images/thumbs/chest1.jpg';
+    this.thumbUrl = '../../assets/images/thumbs/chest1.jpg';
+    this.value = 100;
+    this.key = '9H2;R-ZYB7D-MNB4A';
+  }
 }

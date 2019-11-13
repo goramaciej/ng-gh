@@ -1,0 +1,72 @@
+{
+  "Skrzynie": [{
+    "id": 0,
+    "name": "Skrzynia infernus",
+    "type": "chest",
+    "imageUrl": "../../assets/images/big/sample-chest.png",
+    "thumbUrl": "../../assets/images/thumbs/chest1.jpg",
+    "value": 0
+  }, {
+    "id": 1,
+    "name": "Skrzynia infernus1",
+    "type": "chest",
+    "imageUrl": "../../assets/images/big/sample-chest.png",
+    "thumbUrl": "../../assets/images/thumbs/chest1.jpg",
+    "value": 0
+  }],
+  "Runy": [{
+    "id": 3,
+    "name": "Run żółty",
+    "type": "run",
+    "imageUrl": "../../assets/images/thumbs/run1.png",
+    "thumbUrl": "../../assets/images/thumbs/run1.png",
+    "value": 0
+  }, {
+    "id": 4,
+    "name": "Run niebieski",
+    "type": "run",
+    "imageUrl": "../../assets/images/thumbs/run2.png",
+    "thumbUrl": "../../assets/images/thumbs/run2.png",
+    "value": 0
+  }, {
+    "id": 4,
+    "name": "Run fioletowy",
+    "type": "run",
+    "imageUrl": "../../assets/images/thumbs/run3.png",
+    "thumbUrl": "../../assets/images/thumbs/run3.png",
+    "value": 0
+  }],
+  "Nagrody": [{
+    "id": 5,
+    "name": "Playstation",
+    "type": "reward",
+    "imageUrl": "../../assets/images/big/sample-reward.png",
+    "thumbUrl": "../../assets/images/thumbs/playstation.png",
+    "value": 200,
+    "key": "9H2LR-ZYB7D-MNB4A"
+  }, {
+    "id": 6,
+    "name": "WoW 1",
+    "type": "reward",
+    "imageUrl": "../../assets/images/big/sample-reward.png",
+    "thumbUrl": "../../assets/images/thumbs/wow1.jpg",
+    "value": 100,
+    "key": "9H2LR-ZYB7D-MNB4B"
+  }, {
+    "id": 7,
+    "name": "WoW 2",
+    "type": "reward",
+    "imageUrl": "../../assets/images/big/sample-reward.png",
+    "thumbUrl": "../../assets/images/thumbs/wow2.jpg",
+    "value": 150,
+    "key": "9H2LR-ZYB7D-MNB4C"
+    }, {
+      "id": 8,
+      "name": "Random CD-Key",
+      "type": "reward",
+      "imageUrl": "../../assets/images/big/sample-reward.png",
+      "thumbUrl": "../../assets/images/thumbs/cd-key.png",
+      "value": 150,
+      "key": "9H2LR-ZYB7D-MNB4C"
+    }]
+}
