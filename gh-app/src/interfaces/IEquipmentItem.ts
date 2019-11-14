@@ -6,4 +6,5 @@ export interface IEquipmentItem {
     thumbUrl?: string;
     value: number;
     key?: string;
+    appIndex?: number;
 }

@@ -11,22 +11,24 @@ export class EquipItemEnlargedComponent implements OnInit {
   @Input()
   item: IEquipmentItem = null;
 
-  @Output()
-  closeEvent = new EventEmitter<string>();
+  // @Output()
+  // closeEvent = new EventEmitter<string>();
 
   @Output()
-  closeEnlargedItem = new EventEmitter<number>();
+  closeEnlargedItemEvent = new EventEmitter<number>();
+
+  @Output()
+  openChestEvent = new EventEmitter<number>();
 
   constructor() { }
 
-  ngOnInit() {
-  }
-  logItem(){
-    console.table(this.item);
+  ngOnInit() { }
+
+  openChest() {
+    this.openChestEvent.emit(this.item.appIndex);
   }
   closeEnlarged() {
-    // this.closeEvent.emit('close');
-    this.closeEnlargedItem.emit(12);
+    this.closeEnlargedItemEvent.emit();
   }
 
 }

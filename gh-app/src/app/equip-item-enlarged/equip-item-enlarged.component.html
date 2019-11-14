@@ -8,7 +8,7 @@
         <img [src]="item.imageUrl" />
     </div>
 
-    <div class="chest-button" *ngIf="item.type == 'chest'">
+    <div class="chest-button" *ngIf="item.type == 'chest'" (click)="openChest()">
       <p>OTWÓRZ SKRZYNKĘ</p>
     </div>
     <div class="display-key" *ngIf="item.key">

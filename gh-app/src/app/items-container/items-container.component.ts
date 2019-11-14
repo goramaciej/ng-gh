@@ -25,6 +25,8 @@ export class ItemsContainerComponent implements OnInit {
     }
   }
   itemEventOpen(event) {
-    this.itemEvent.emit(event);
+    if (this.categoryName != 'Runy'){
+      this.itemEvent.emit(event);
+    }
   }
 }

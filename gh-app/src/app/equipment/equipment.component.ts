@@ -27,7 +27,7 @@ export class EquipmentComponent implements OnInit {
     getUserItemsOfCategory(categoryName: string): Array<string> {
       const userArr = User[categoryName];
       const itArr = Items[categoryName];
-      const newArr = userArr.map( item => {
+      const newArr = userArr.map( (item, index) => {
         const obj: IEquipmentItem = itArr.find(x => x.id === item);
         return obj;
       });
@@ -38,37 +38,17 @@ export class EquipmentComponent implements OnInit {
       this.enlargedComponent = event;
     }
 
-    showItem() {
-      this.enlargedComponent = new Item();
+    openChest(event){
+      User.Skrzynie.splice(event, 1);
+      this.addRandomReward();
     }
+
     closeEnlargedItem(event) {
       this.enlargedComponent = null;
     }
-
-
-    openChest(item) {
-
-    }
     addRandomReward() {
-
+      const newReward = Items.Nagrody[Math.floor(Math.random() * Items.Nagrody.length)];
+      User.Nagrody.unshift(newReward.id);
+      this.enlargedComponent = newReward;
     }
-}
-
-class Item implements IEquipmentItem {
-  name: string;
-  id: number;
-  type: string;
-  imageUrl: string;
-  thumbUrl: string;
-  value: number;
-  key: string;
-  constructor() {
-    this.name = 'skrzynia1';
-    this.id = 1;
-    this.type = 'reward';
-    this.imageUrl = '../../assets/images/big/sample-chest.png';
-    this.thumbUrl = '../../assets/images/thumbs/chest1.jpg';
-    this.value = 100;
-    this.key = '9H2R-ZYB7D-MNB4A';
-  }
 }

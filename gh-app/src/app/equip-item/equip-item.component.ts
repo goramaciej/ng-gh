@@ -12,7 +12,7 @@ export class EquipItemComponent implements OnInit {
   item: IEquipmentItem;
 
   @Input()
-  id: number;
+  appIndex: number;
 
   @Output()
   itemEvent = new EventEmitter<IEquipmentItem>();
@@ -23,6 +23,7 @@ export class EquipItemComponent implements OnInit {
 
   }
   emitItem(event) {
+    this.item.appIndex = this.appIndex;
     this.itemEvent.emit(this.item);
   }
 }
