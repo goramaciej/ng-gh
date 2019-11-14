@@ -1,0 +1,18 @@
+<div class="equip-item-enlarged">
+  <div class="close-enlarged-item" (click)="closeEnlarged()">
+    <img src="../../assets/images/close.png" />
+  </div>
+  <div class="enlarged-item-inner">
+    <h1>{{ item.name.toUpperCase() }}</h1>
+    <div class="img-container">
+        <img [src]="item.imageUrl" />
+    </div>
+
+    <div class="chest-button" *ngIf="item.type == 'chest'">
+      <p>OTWÓRZ SKRZYNKĘ</p>
+    </div>
+    <div class="display-key" *ngIf="item.key">
+      <p>{{ item.key }}</p>
+    </div>
+  </div>
+</div>

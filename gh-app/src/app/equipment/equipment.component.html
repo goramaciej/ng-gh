@@ -1,5 +1,11 @@
-<p>Equipment works</p>
 <!-- <app-equip-item [item]="data1" [id]="12" ></app-equip-item> -->
+<app-equip-item-enlarged *ngIf="enlargedComponent" [item]="enlargedComponent" (closeEnlargedItem)="closeEnlargedItem($event)"></app-equip-item-enlarged>
 
-<app-items-container *ngFor="let category of categories; let i = index" [categoryName]="categories[i]" [items]="getUserItemsOfCategory(categories[i])">
-</app-items-container>
+<div [hidden]="enlargedComponent" class="equipment-container">
+    <button (click)="showItem()" >showItem</button>
+    <app-items-container *ngFor="let category of categories; let i = index" [categoryName]="categories[i]"
+    [items]="getUserItemsOfCategory(categories[i])"
+    (itemEvent)="itemEventOpen($event)" >
+      </app-items-container>
+</div>
+

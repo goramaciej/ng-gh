@@ -1,7 +1,7 @@
 @import '../../scss/properties.scss';
 h1 {
   text-align: center;
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-weight: 400;
   color: $gh-green;
   margin: 3rem 0 0.8rem;
@@ -13,7 +13,6 @@ p {
   margin-bottom: 1rem;
 }
 .items-grid {
-  padding: 0 2rem;
   display: grid;
   justify-content: center;
   grid-template-columns: repeat(auto-fit, 100px);

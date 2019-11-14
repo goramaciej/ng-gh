@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { IEquipmentItem } from './../../interfaces/IEquipmentItem';
 
 @Component({
@@ -14,14 +14,17 @@ export class ItemsContainerComponent implements OnInit {
   @Input()
   items: Array<IEquipmentItem>;
 
+  @Output()
+  itemEvent = new EventEmitter<IEquipmentItem>();
+
   value: number = 0;
 
   ngOnInit() {
-    for(const i of this.items){
+    for(const i of this.items) {
       this.value += i.value;
     }
   }
-  logMeOut(){
-    console.log(this.value);
+  itemEventOpen(event) {
+    this.itemEvent.emit(event);
   }
 }

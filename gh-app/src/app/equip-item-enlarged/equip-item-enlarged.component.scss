@@ -1,0 +1,49 @@
+@import '../../scss/properties.scss';
+.equip-item-enlarged{
+  width: 100vw;
+  height: 100vh;
+  background: #242c30;
+  .close-enlarged-item{
+    cursor: pointer;
+    position: absolute;
+    top: 30px;
+    left: 30px;
+  }
+  .enlarged-item-inner{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    padding: 2rem 1rem;
+    h1{
+      font-size: calc(16px + 2vw);
+      margin-top: 4rem;
+      font-weight: 900;
+      color: white;
+    }
+    .chest-button {
+      display: inline-block;
+      background: $gh-green;
+      padding: 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      p{
+        font-size: 1rem;
+        font-weight: 700;
+      }
+    }
+    .display-key {
+      display: inline-block;
+      background: #3c484d;
+      padding: 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      p{
+        font-size: 1rem;
+        font-weight: 400;
+        color: white;
+      }
+    }
+  }
+}

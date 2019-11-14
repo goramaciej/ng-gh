@@ -6,7 +6,8 @@
   <!-- <button (click)="logMeOut()">log</button> -->
 
   <div class="items-grid">
-    <app-equip-item *ngFor="let item of items; let i = index" [item]="item"></app-equip-item>
+    <app-equip-item *ngFor="let item of items; let i = index" [item]="item" (itemEvent)="itemEventOpen($event)"></app-equip-item>
+    <app-equip-item-plus></app-equip-item-plus>
   </div>
 </div>
 

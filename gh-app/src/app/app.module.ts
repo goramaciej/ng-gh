@@ -9,6 +9,7 @@ import { EquipItemComponent } from './equip-item/equip-item.component';
 import { TemporaryComponent } from './temporary/temporary.component';
 import { ItemsContainerComponent } from './items-container/items-container.component';
 import { EquipItemPlusComponent } from './equip-item-plus/equip-item-plus.component';
+import { EquipItemEnlargedComponent } from './equip-item-enlarged/equip-item-enlarged.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { EquipItemPlusComponent } from './equip-item-plus/equip-item-plus.compon
     EquipItemComponent,
     TemporaryComponent,
     ItemsContainerComponent,
-    EquipItemPlusComponent
+    EquipItemPlusComponent,
+    EquipItemEnlargedComponent
   ],
   imports: [
     BrowserModule,

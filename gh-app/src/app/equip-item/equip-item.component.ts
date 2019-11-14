@@ -15,7 +15,7 @@ export class EquipItemComponent implements OnInit {
   id: number;
 
   @Output()
-  selected = new EventEmitter<IEquipmentItem>();
+  itemEvent = new EventEmitter<IEquipmentItem>();
 
   constructor() { }
 
@@ -23,7 +23,6 @@ export class EquipItemComponent implements OnInit {
 
   }
   emitItem(event) {
-    console.log('moje id: ' + this.id);
-    this.selected.emit(this.item);
+    this.itemEvent.emit(this.item);
   }
 }

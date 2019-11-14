@@ -11,7 +11,7 @@ import User from '../../data/user.json';
 })
 export class EquipmentComponent implements OnInit {
     // ng serve
-    data1: IEquipmentItem;
+    enlargedComponent: IEquipmentItem;
     categories: Array<string> = [];
 
     constructor() {
@@ -22,7 +22,6 @@ export class EquipmentComponent implements OnInit {
       for (const n in User) {
         this.categories.push(n);
       }
-      this.data1 = new Item();
     }
 
     getUserItemsOfCategory(categoryName: string): Array<string> {
@@ -35,7 +34,19 @@ export class EquipmentComponent implements OnInit {
       return newArr;
     }
 
-    openChest() {
+    itemEventOpen(event){
+      this.enlargedComponent = event;
+    }
+
+    showItem() {
+      this.enlargedComponent = new Item();
+    }
+    closeEnlargedItem(event) {
+      this.enlargedComponent = null;
+    }
+
+
+    openChest(item) {
 
     }
     addRandomReward() {
@@ -54,10 +65,10 @@ class Item implements IEquipmentItem {
   constructor() {
     this.name = 'skrzynia1';
     this.id = 1;
-    this.type = 'chest';
-    this.imageUrl = '../../assets/images/thumbs/chest1.jpg';
+    this.type = 'reward';
+    this.imageUrl = '../../assets/images/big/sample-chest.png';
     this.thumbUrl = '../../assets/images/thumbs/chest1.jpg';
     this.value = 100;
-    this.key = '9H2;R-ZYB7D-MNB4A';
+    this.key = '9H2R-ZYB7D-MNB4A';
   }
 }

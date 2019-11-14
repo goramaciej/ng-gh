@@ -1,0 +1,10 @@
+@import '../../scss/properties.scss';
+.equip-item-plus{
+  width: $gh-item-size;
+  height: $gh-item-size;
+  border: $gh-item-border solid $gh-green;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
