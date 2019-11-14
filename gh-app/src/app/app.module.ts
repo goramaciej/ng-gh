@@ -8,6 +8,7 @@ import { EquipmentComponent } from './equipment/equipment.component';
 import { EquipItemComponent } from './equip-item/equip-item.component';
 import { TemporaryComponent } from './temporary/temporary.component';
 import { ItemsContainerComponent } from './items-container/items-container.component';
+import { EquipItemPlusComponent } from './equip-item-plus/equip-item-plus.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { ItemsContainerComponent } from './items-container/items-container.compo
     EquipmentComponent,
     EquipItemComponent,
     TemporaryComponent,
-    ItemsContainerComponent
+    ItemsContainerComponent,
+    EquipItemPlusComponent
   ],
   imports: [
     BrowserModule,

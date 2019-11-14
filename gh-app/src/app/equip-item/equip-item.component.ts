@@ -22,7 +22,7 @@ export class EquipItemComponent implements OnInit {
   ngOnInit() {
 
   }
-  emitItem(event){
+  emitItem(event) {
     console.log('moje id: ' + this.id);
     this.selected.emit(this.item);
   }

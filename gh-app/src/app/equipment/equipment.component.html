@@ -1,5 +1,5 @@
 <p>Equipment works</p>
 <!-- <app-equip-item [item]="data1" [id]="12" ></app-equip-item> -->
 
-<button (click)="showData()">showData</button>
-<!-- <img src="../../assets/images/thumbs/chest1.jpg"> -->
+<app-items-container *ngFor="let category of categories; let i = index" [categoryName]="categories[i]" [items]="getUserItemsOfCategory(categories[i])">
+</app-items-container>

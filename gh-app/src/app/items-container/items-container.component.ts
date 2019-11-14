@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output } from '@angular/core';
+import { IEquipmentItem } from './../../interfaces/IEquipmentItem';
 
 @Component({
   selector: 'app-items-container',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ItemsContainerComponent implements OnInit {
 
-  constructor() { }
+  @Input()
+  categoryName: string;
+
+  @Input()
+  items: Array<IEquipmentItem>;
+
+  value: number = 0;
 
   ngOnInit() {
+    for(const i of this.items){
+      this.value += i.value;
+    }
   }
-
+  logMeOut(){
+    console.log(this.value);
+  }
 }

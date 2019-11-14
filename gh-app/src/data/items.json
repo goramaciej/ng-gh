@@ -29,7 +29,7 @@
     "thumbUrl": "../../assets/images/thumbs/run2.png",
     "value": 0
   }, {
-    "id": 4,
+    "id": 5,
     "name": "Run fioletowy",
     "type": "run",
     "imageUrl": "../../assets/images/thumbs/run3.png",
@@ -37,7 +37,7 @@
     "value": 0
   }],
   "Nagrody": [{
-    "id": 5,
+    "id": 6,
     "name": "Playstation",
     "type": "reward",
     "imageUrl": "../../assets/images/big/sample-reward.png",
@@ -45,7 +45,7 @@
     "value": 200,
     "key": "9H2LR-ZYB7D-MNB4A"
   }, {
-    "id": 6,
+    "id": 7,
     "name": "WoW 1",
     "type": "reward",
     "imageUrl": "../../assets/images/big/sample-reward.png",
@@ -53,7 +53,7 @@
     "value": 100,
     "key": "9H2LR-ZYB7D-MNB4B"
   }, {
-    "id": 7,
+    "id": 8,
     "name": "WoW 2",
     "type": "reward",
     "imageUrl": "../../assets/images/big/sample-reward.png",
@@ -61,7 +61,7 @@
     "value": 150,
     "key": "9H2LR-ZYB7D-MNB4C"
     }, {
-      "id": 8,
+      "id": 9,
       "name": "Random CD-Key",
       "type": "reward",
       "imageUrl": "../../assets/images/big/sample-reward.png",

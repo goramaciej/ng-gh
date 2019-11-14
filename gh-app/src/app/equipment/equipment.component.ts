@@ -10,30 +10,37 @@ import User from '../../data/user.json';
     styleUrls: ['./equipment.component.scss']
 })
 export class EquipmentComponent implements OnInit {
-    //ng serve
+    // ng serve
     data1: IEquipmentItem;
-    user = User;
-    items = Items;
+    categories: Array<string> = [];
 
     constructor() {
 
     }
     ngOnInit() {
-      console.log('Reading local json files:: ');
-
-
-
-      //console.log(JSON.parse(this.user));
-      //console.log(JSON.parse(User));
+      // tslint:disable-next-line: forin
+      for (const n in User) {
+        this.categories.push(n);
+      }
       this.data1 = new Item();
     }
-    showData(){
-      console.log(this.data1.name);
-    }
-    itemSelected(event) {
-      console.log('itemSelected: ' + event);
+
+    getUserItemsOfCategory(categoryName: string): Array<string> {
+      const userArr = User[categoryName];
+      const itArr = Items[categoryName];
+      const newArr = userArr.map( item => {
+        const obj: IEquipmentItem = itArr.find(x => x.id === item);
+        return obj;
+      });
+      return newArr;
     }
 
+    openChest() {
+
+    }
+    addRandomReward() {
+
+    }
 }
 
 class Item implements IEquipmentItem {
@@ -44,7 +51,7 @@ class Item implements IEquipmentItem {
   thumbUrl: string;
   value: number;
   key: string;
-  constructor(){
+  constructor() {
     this.name = 'skrzynia1';
     this.id = 1;
     this.type = 'chest';
