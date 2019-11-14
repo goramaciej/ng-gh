@@ -1,4 +1,7 @@
 @import '../../scss/properties.scss';
+.items-container{
+  max-width: 750px;
+}
 h1 {
   text-align: center;
   font-size: 1.2rem;
@@ -15,6 +18,9 @@ p {
 .items-grid {
   display: grid;
   justify-content: center;
-  grid-template-columns: repeat(auto-fit, 100px);
-  grid-gap: 2rem;
+  grid-template-columns: repeat(auto-fill, 100px);
+  grid-gap: 1rem;
+  @media screen and (min-width: 460px){
+    grid-gap: 1.7rem;
+  }
 }

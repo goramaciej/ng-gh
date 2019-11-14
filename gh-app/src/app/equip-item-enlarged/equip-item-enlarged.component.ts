@@ -30,5 +30,7 @@ export class EquipItemEnlargedComponent implements OnInit {
   closeEnlarged() {
     this.closeEnlargedItemEvent.emit();
   }
+  //
+
 
 }

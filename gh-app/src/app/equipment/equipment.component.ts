@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+
 import { IEquipmentItem } from './../../interfaces/IEquipmentItem';
 
 import Items from '../../data/items.json';
@@ -18,9 +19,10 @@ export class EquipmentComponent implements OnInit {
 
     }
     ngOnInit() {
-      // tslint:disable-next-line: forin
       for (const n in User) {
-        this.categories.push(n);
+        if (User.hasOwnProperty(n)) {
+          this.categories.push(n);
+        }
       }
     }
 

@@ -1,5 +1,17 @@
 @import '../../scss/properties.scss';
 
+.hidden{
+  opacity: 0.2;
+}
+
 .equipment-container{
-  padding: 1rem 2rem 3rem;
+  padding: 1rem 0 3rem;
+
+  @media screen and (min-width: 460px){
+    padding: 1rem 1rem 3rem;
+  }
+  @media screen and (min-width: 860px){
+    width: 50vw;
+    margin-left: calc(50vw - 1rem - 1px);
+  }
 }

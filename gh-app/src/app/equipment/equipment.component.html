@@ -1,16 +1,25 @@
 <!-- <app-equip-item [item]="data1" [id]="12" ></app-equip-item> -->
-<app-equip-item-enlarged
-    *ngIf="enlargedComponent"
+  <app-equip-item-enlarged
     [item]="enlargedComponent"
     (closeEnlargedItemEvent)="closeEnlargedItem($event)"
     (openChestEvent)="openChest($event)">
   </app-equip-item-enlarged>
 
-<div [hidden]="enlargedComponent" class="equipment-container">
-    <app-items-container *ngFor="let category of categories; let i = index"
-    [categoryName]="categories[i]"
-    [items]="getUserItemsOfCategory(categories[i])"
-    (itemEvent)=" itemEventOpen($event)" >
-    </app-items-container>
-</div>
+  <div class="equipment-container">
+      <app-items-container *ngFor="let category of categories; let i = index"
+      [categoryName]="categories[i]"
+      [items]="getUserItemsOfCategory(categories[i])"
+      (itemEvent)=" itemEventOpen($event)" >
+      </app-items-container>
+  </div>
+<!-- *ngIf="enlargedComponent" to w górnym -->
+<!-- [hidden]="enlargedComponent" to w dolnym -->
+
+<!-- <app-equip-item-enlarged
+    class="aside"
+    [ngClass]="{'hidden': enlargedComponent}"
+    [item]="enlargedComponent"
+    (closeEnlargedItemEvent)="closeEnlargedItem($event)"
+    (openChestEvent)="openChest($event)">
+  </app-equip-item-enlarged> -->
 
