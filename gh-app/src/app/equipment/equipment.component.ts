@@ -1,5 +1,4 @@
 import { Component, OnInit, Input } from '@angular/core';
-
 import { IEquipmentItem } from './../../interfaces/IEquipmentItem';
 
 import Items from '../../data/items.json';
@@ -15,9 +14,8 @@ export class EquipmentComponent implements OnInit {
     enlargedComponent: IEquipmentItem;
     categories: Array<string> = [];
 
-    constructor() {
+    clickedComponent: IEquipmentItem;
 
-    }
     ngOnInit() {
       for (const n in User) {
         if (User.hasOwnProperty(n)) {
@@ -36,11 +34,11 @@ export class EquipmentComponent implements OnInit {
       return newArr;
     }
 
-    itemEventOpen(event){
+    itemEventOpen(event) {
       this.enlargedComponent = event;
     }
 
-    openChest(event){
+    openChest(event) {
       User.Skrzynie.splice(event, 1);
       this.addRandomReward();
     }
