@@ -35,7 +35,7 @@ export class EquipItemEnlargedComponent implements OnInit {
   ngOnInit() { }
 
   openChest() {
-    //this.openChestEvent.emit(this.item.appIndex);
+    console.log('openChest');
   }
   closeEnlarged() {
     //this.closeEnlargedItemEvent.emit();

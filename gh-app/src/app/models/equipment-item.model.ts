@@ -1,5 +1,6 @@
 export interface EquipmentItemModel {
   name: string;
+  appId: number;
   id: number;
   type: string;
   //chest, run, reward
@@ -7,5 +8,4 @@ export interface EquipmentItemModel {
   thumbUrl?: string;
   value: number;
   key?: string;
-  appId?: number;
 }

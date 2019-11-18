@@ -1,6 +1,8 @@
-<div class="equip-item-enlarged" [ngClass]="{'visible': (item | async)}">
+<div class="equip-item-enlarged" [ngClass]="{'visible': (item | async).name}">
   <ng-container *ngIf="(item | async)">
-    <div class="close-enlarged-item" (click)="closeEnlarged()">
+    <div class="close-enlarged-item"
+      *ngIf="(item | async).name"
+      (click)="closeEnlarged()">
       <img src="../../assets/images/close.png" />
     </div>
 

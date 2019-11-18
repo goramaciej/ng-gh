@@ -1,4 +1,4 @@
-<div class="equip-item" (click)="setSelected($event)">
+<div class="equip-item"  [ngClass]="{'selected': (selectedItem | async).appId == item.appId}" (click)="setSelected($event)">
   <!-- <button (click)="showItem()">showItem</button> -->
   <img [src]="item.thumbUrl" />
   <!-- <p>{{ myString }}</p> -->

@@ -30,8 +30,9 @@ export class AppComponent {
         const catName = category;
         for (let item of User[catName]) {
           const it: EquipmentItemModel = Items[catName].find( el => el.id === item);
-          it.appId = Math.floor(Math.random() * 100000);
-          this.store.dispatch( new UserEquipmentActions.AddItemAction(it) );
+          const copy = JSON.parse(JSON.stringify(it));
+          copy.appId = Math.floor(Math.random() * 100000);
+          this.store.dispatch( new UserEquipmentActions.AddItemAction(copy) );
           // switch (it.type){
           //   case 'chest':
           //       this.store.dispatch( new UserEquipmentActions.AddItemAction(it) );

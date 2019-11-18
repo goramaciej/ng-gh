@@ -1,5 +1,4 @@
 import { Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
-//import { IEquipmentItem } from './../../interfaces/IEquipmentItem';
 import { EquipmentItemModel } from './../models/equipment-item.model';
 
 import { Store } from '@ngrx/store';
@@ -28,7 +27,11 @@ export class EquipItemComponent implements OnInit {
   itemEvent = new EventEmitter<IEquipmentItem>();*/
 
   constructor(private store: Store<AppState>) {
-
+    this.selectedItem = this.store.select('selectedItem');
+    this.selectedItem.subscribe(res => {
+      // console.log('EquipItem show current selectedItem');
+      // console.log(res.appId);
+    });
   }
 
   ngOnInit() {

@@ -25,7 +25,10 @@ export class EquipmentComponent implements OnInit {
 
     constructor(private store: Store<AppState>){
       this.selectedItem = this.store.select('selectedItem');
-      this.selectedItem.subscribe(res => console.table(res));
+      this.selectedItem.subscribe(res => {
+        // console.log('equipmentComponent show current selectedItem');
+        // console.table(res);
+      });
     }
 
     ngOnInit() {

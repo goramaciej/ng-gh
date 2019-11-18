@@ -11,7 +11,7 @@
     p{
       color: white;
     }
-    .selected {
+    &.selected {
       border-color: $gh-yellow;
     }
 }
