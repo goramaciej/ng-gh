@@ -1,22 +1,22 @@
-<div class="equip-item-enlarged" [ngClass]="{'visible': item}">
-  <ng-container *ngIf="item">
+<div class="equip-item-enlarged" [ngClass]="{'visible': (item | async)}">
+  <ng-container *ngIf="(item | async)">
     <div class="close-enlarged-item" (click)="closeEnlarged()">
       <img src="../../assets/images/close.png" />
     </div>
 
     <div class="enlarged-item-inner">
-      <h1>{{ item.name.toUpperCase() }}</h1>
+      <h1>{{ (item | async).name.toUpperCase() }}</h1>
       <div class="img-container">
-          <img [src]="item.imageUrl" />
+          <img [src]="(item | async).imageUrl" />
       </div>
 
       <div class="chest-button"
-        *ngIf="item.type == 'chest'"
+        *ngIf="(item | async).type == 'chest'"
         (click)="openChest()">
         <p>OTWÓRZ SKRZYNKĘ</p>
       </div>
-      <div class="display-key" *ngIf="item.key">
-        <p>{{ item.key }}</p>
+      <div class="display-key" *ngIf="(item | async).key">
+        <p>{{ (item | async).key }}</p>
       </div>
     </div>
     </ng-container>

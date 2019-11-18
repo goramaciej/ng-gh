@@ -1,8 +1,14 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { IEquipmentItem } from './../../interfaces/IEquipmentItem';
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs/Observable';
 
-import Items from '../../data/items.json';
+import { EquipmentItemModel } from './../models/equipment-item.model';
+
 import User from '../../data/user.json';
+
+interface AppState {
+  selectedItem: EquipmentItemModel;
+}
 
 @Component({
     selector: 'app-equipment',
@@ -10,11 +16,17 @@ import User from '../../data/user.json';
     styleUrls: ['./equipment.component.scss']
 })
 export class EquipmentComponent implements OnInit {
-    // ng serve
-    enlargedComponent: IEquipmentItem;
-    categories: Array<string> = [];
 
-    clickedComponent: IEquipmentItem;
+    categories: Array<string> = [];
+    //enlargedComponent: IEquipmentItem;
+    //clickedComponent: IEquipmentItem;
+
+    selectedItem: Observable<EquipmentItemModel>;
+
+    constructor(private store: Store<AppState>){
+      this.selectedItem = this.store.select('selectedItem');
+      this.selectedItem.subscribe(res => console.table(res));
+    }
 
     ngOnInit() {
       for (const n in User) {
@@ -24,7 +36,7 @@ export class EquipmentComponent implements OnInit {
       }
     }
 
-    getUserItemsOfCategory(categoryName: string): Array<string> {
+    /*getUserItemsOfCategory(categoryName: string): Array<string> {
       const userArr = User[categoryName];
       const itArr = Items[categoryName];
       const newArr = userArr.map( (item, index) => {
@@ -50,5 +62,5 @@ export class EquipmentComponent implements OnInit {
       const newReward = Items.Nagrody[Math.floor(Math.random() * Items.Nagrody.length)];
       User.Nagrody.unshift(newReward.id);
       this.enlargedComponent = newReward;
-    }
+    }*/
 }

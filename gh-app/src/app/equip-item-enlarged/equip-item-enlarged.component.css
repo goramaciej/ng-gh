@@ -1,0 +1,100 @@
+.equip-item-enlarged {
+  background: #242c30;
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+  -webkit-transition: -webkit-transform .4s ease-in-out;
+  transition: -webkit-transform .4s ease-in-out;
+  transition: transform .4s ease-in-out;
+  transition: transform .4s ease-in-out, -webkit-transform .4s ease-in-out;
+}
+
+@media screen and (min-width: 860px) {
+  .equip-item-enlarged {
+    width: calc(50vw - 1rem);
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+.equip-item-enlarged.visible {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}
+
+.equip-item-enlarged .close-enlarged-item {
+  cursor: pointer;
+  position: absolute;
+  top: 30px;
+  left: 30px;
+}
+
+.equip-item-enlarged .enlarged-item-inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+  padding: 2rem 1rem;
+}
+
+.equip-item-enlarged .enlarged-item-inner h1 {
+  font-size: calc(16px + 2vw);
+  margin-top: 4rem;
+  font-weight: 900;
+  color: white;
+}
+
+@media screen and (min-width: 860px) {
+  .equip-item-enlarged .enlarged-item-inner h1 {
+    font-size: 32px;
+  }
+}
+
+.equip-item-enlarged .enlarged-item-inner .img-container {
+  text-align: center;
+}
+
+.equip-item-enlarged .enlarged-item-inner .img-container img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.equip-item-enlarged .enlarged-item-inner .chest-button {
+  display: inline-block;
+  background: #21e7b6;
+  padding: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.equip-item-enlarged .enlarged-item-inner .chest-button p {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.equip-item-enlarged .enlarged-item-inner .display-key {
+  display: inline-block;
+  background: #3c484d;
+  padding: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.equip-item-enlarged .enlarged-item-inner .display-key p {
+  font-size: 1rem;
+  font-weight: 400;
+  color: white;
+}
+/*# sourceMappingURL=equip-item-enlarged.component.css.map */

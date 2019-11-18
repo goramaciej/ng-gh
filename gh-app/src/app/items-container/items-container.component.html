@@ -1,17 +1,17 @@
 <div class="items-container">
 
   <h1> {{ categoryName.toUpperCase() }} </h1>
-  <ng-container *ngIf = "value > 0">
-      <p>WARTOŚĆ=<span style="color:white">${{ value }}</span></p>
-  </ng-container>
-  <!-- <button (click)="logMeOut()">log</button> -->
-
+  <!-- <ng-container *ngIf = "value > 0">
+      <span>WARTOŚĆ=<span style="color:white">${{ value }}</span></p>
+  </ng-container> -->
   <div class="items-grid">
-    <app-equip-item *ngFor="let item of items; let i = index"
-        [item]="item"
-        [appIndex]="i"
-        (itemEvent)="itemEventOpen($event)">
-    </app-equip-item>
+    <ng-container *ngFor="let item of (equipment | async); let i = index">
+        <app-equip-item *ngIf="checkItemCategory(item.type)"
+          [item]="item"
+          [appIndex]="i">
+      </app-equip-item>
+    </ng-container>
+
     <app-equip-item-plus></app-equip-item-plus>
   </div>
 </div>

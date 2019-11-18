@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AAEA,AAAA,OAAO,CAAA;EACL,OAAO,EAAE,GAAG;CACb;;AAED,AAAA,oBAAoB,CAAA;EAClB,OAAO,EAAE,WAAW;CASrB;;AAPC,MAAM,CAAC,MAAM,MAAM,SAAS,EAAE,KAAK;EAHrC,AAAA,oBAAoB,CAAA;IAIhB,OAAO,EAAE,cAAc;GAM1B;;;AAJC,MAAM,CAAC,MAAM,MAAM,SAAS,EAAE,KAAK;EANrC,AAAA,oBAAoB,CAAA;IAOhB,KAAK,EAAE,IAAI;IACX,WAAW,EAAE,uBAAuB;GAEvC",
+    "sources": [
+        "equipment.component.scss",
+        "../../scss/properties.scss"
+    ],
+    "names": [],
+    "file": "equipment.component.css"
+}

@@ -11,6 +11,9 @@ import { ItemsContainerComponent } from './items-container/items-container.compo
 import { EquipItemPlusComponent } from './equip-item-plus/equip-item-plus.component';
 import { EquipItemEnlargedComponent } from './equip-item-enlarged/equip-item-enlarged.component';
 
+import { StoreModule } from '@ngrx/store';
+import { UserItemsReducer } from './reducers/user-items-reducer';
+import { SelectedItemReducer } from './reducers/selected-item-reducer';
 
 @NgModule({
   declarations: [
@@ -18,16 +21,20 @@ import { EquipItemEnlargedComponent } from './equip-item-enlarged/equip-item-enl
     EquipmentComponent,
     EquipItemComponent,
     TemporaryComponent,
-    ItemsContainerComponent,
+     ItemsContainerComponent,
     EquipItemPlusComponent,
     EquipItemEnlargedComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    StoreModule.forRoot( {
+      equipment: UserItemsReducer,
+      selectedItem: SelectedItemReducer
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

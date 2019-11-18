@@ -1,5 +1,13 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { IEquipmentItem } from './../../interfaces/IEquipmentItem';
+import { EquipmentItemModel } from './../models/equipment-item.model';
+
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs/Observable';
+
+import * as SelectedItemActions from './../actions/selected-item.actions';
+interface AppState {
+  selectedItem: EquipmentItemModel;
+}
 
 @Component({
   selector: 'app-equip-item-enlarged',
@@ -9,7 +17,7 @@ import { IEquipmentItem } from './../../interfaces/IEquipmentItem';
 export class EquipItemEnlargedComponent implements OnInit {
 
   @Input()
-  item: IEquipmentItem = null;
+  item: EquipmentItemModel = null;
 
   // @Output()
   // closeEvent = new EventEmitter<string>();
@@ -20,15 +28,18 @@ export class EquipItemEnlargedComponent implements OnInit {
   @Output()
   openChestEvent = new EventEmitter<number>();
 
-  constructor() { }
+  constructor(private store: Store<AppState>) {
+
+  }
 
   ngOnInit() { }
 
   openChest() {
-    this.openChestEvent.emit(this.item.appIndex);
+    //this.openChestEvent.emit(this.item.appIndex);
   }
   closeEnlarged() {
-    this.closeEnlargedItemEvent.emit();
+    //this.closeEnlargedItemEvent.emit();
+    this.store.dispatch( new SelectedItemActions.ClearSelectedItemAction() );
   }
   //
 

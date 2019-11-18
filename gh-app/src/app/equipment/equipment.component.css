@@ -1,0 +1,21 @@
+.hidden {
+  opacity: 0.2;
+}
+
+.equipment-container {
+  padding: 1rem 0 3rem;
+}
+
+@media screen and (min-width: 460px) {
+  .equipment-container {
+    padding: 1rem 1rem 3rem;
+  }
+}
+
+@media screen and (min-width: 860px) {
+  .equipment-container {
+    width: 50vw;
+    margin-left: calc(50vw - 1rem - 1px);
+  }
+}
+/*# sourceMappingURL=equipment.component.css.map */
