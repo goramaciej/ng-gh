@@ -33,17 +33,6 @@ export class AppComponent {
           const copy = JSON.parse(JSON.stringify(it));
           copy.appId = Math.floor(Math.random() * 100000);
           this.store.dispatch( new UserEquipmentActions.AddItemAction(copy) );
-          // switch (it.type){
-          //   case 'chest':
-          //       this.store.dispatch( new UserEquipmentActions.AddItemAction(it) );
-          //       break;
-          //   case 'run':
-          //       this.store.dispatch( new UserEquipmentActions.AddRunAction(it) );
-          //       break;
-          //   case 'reward':
-          //       this.store.dispatch( new UserEquipmentActions.AddRewardAction(it) );
-          //       break;
-          // }
         }
       }
     }

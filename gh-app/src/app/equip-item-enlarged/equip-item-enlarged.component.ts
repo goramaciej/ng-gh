@@ -3,10 +3,16 @@ import { EquipmentItemModel } from './../models/equipment-item.model';
 
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
+import * as UserEquipmentActions from '../actions/user-equipment.actions';
 
 import * as SelectedItemActions from './../actions/selected-item.actions';
+
+import Items from '../../data/items.json';
+import User from '../../data/user.json';
+
 interface AppState {
   selectedItem: EquipmentItemModel;
+  equipment: Array<EquipmentItemModel>;
 }
 
 @Component({
@@ -15,12 +21,11 @@ interface AppState {
   styleUrls: ['./equip-item-enlarged.component.scss']
 })
 export class EquipItemEnlargedComponent implements OnInit {
+  selectedItem: Observable<EquipmentItemModel>;
+  equipment: Observable<EquipmentItemModel[]>;
 
   @Input()
   item: EquipmentItemModel = null;
-
-  // @Output()
-  // closeEvent = new EventEmitter<string>();
 
   @Output()
   closeEnlargedItemEvent = new EventEmitter<number>();
@@ -35,13 +40,12 @@ export class EquipItemEnlargedComponent implements OnInit {
   ngOnInit() { }
 
   openChest() {
-    console.log('openChest');
+    const newReward = JSON.parse(JSON.stringify(Items.Nagrody[Math.floor(Math.random() * Items.Nagrody.length)]));
+    newReward.appId = Math.floor(Math.random() * 100000);
+    this.store.dispatch( new UserEquipmentActions.AddItemAndOpenAction(newReward) );
+    this.store.dispatch( new SelectedItemActions.SetSelectedItemAction(newReward) );
   }
   closeEnlarged() {
-    //this.closeEnlargedItemEvent.emit();
     this.store.dispatch( new SelectedItemActions.ClearSelectedItemAction() );
   }
-  //
-
-
 }
